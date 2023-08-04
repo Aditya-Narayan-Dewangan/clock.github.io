@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="back">
+        <div class="hr"><h4></h4></div>
+        <div class="dot">:</div>
+        <div class="min"><h4></h4></div>
+        <div class="dot">:</div>
+        <div class="sec"><h4></h4></div>
+        <div class="dot1"><p></p></div>
+    </div>
+</body>
+<script>
+    setInterval(showTime, 1000);
+    function showTime() {
+    let time = new Date();
+    let hour = time.getHours();
+    let min = time.getMinutes();
+    let sec = time.getSeconds();
+    am_pm = "AM";
+    if(hour>12){
+        am_pm = "AM";
+    }
+    else{
+        am_pm = "PM";
+    }
+    if(hour<10){
+        hour = '0' + hour;
+    }
+    if(min<10){
+        min = '0' + min;
+    }
+    if(sec<10){
+        sec = '0' + sec
+    }
+    document.getElementsByTagName("h4")[0]
+        .innerHTML = hour;
+    document.getElementsByTagName("h4")[1]
+        .innerHTML = min;
+    document.getElementsByTagName("h4")[2]
+        .innerHTML = sec;
+
+
+    document.getElementsByTagName("p")[0]
+        .innerHTML = am_pm;
+
+    }
+showTime();
+</script>
+</html>
